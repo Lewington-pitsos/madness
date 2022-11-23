@@ -672,7 +672,7 @@ def main(args):
         overrode_max_train_steps = True
 
     
-    if args.lr_scheulder == 'madness':
+    if args.lr_scheduler == 'madness':
         lr_scheduler = get_madness_scheduler(optimizer, args.max_train_steps)
     else:
         lr_scheduler = get_scheduler(
