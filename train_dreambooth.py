@@ -755,7 +755,7 @@ def main(args):
                 with torch.autocast("cuda"), torch.inference_mode():
                     for i in range(0, len(args.save_sample_prompts), args.sample_batch_size):
                         images = pipeline(
-                            args.save_sample_prompts[i:(i+1)*args.sample_batch_size],
+                            args.save_sample_prompts[i:i + args.sample_batch_size],
                             negative_prompt=args.save_sample_negative_prompt,
                             guidance_scale=args.save_guidance_scale,
                             num_inference_steps=args.save_infer_steps,
